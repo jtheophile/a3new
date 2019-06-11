@@ -14,7 +14,7 @@
         console.log(x);
     }
 }
-printInt(22);                 Test function
+printInt(22);                 //Test function
 
 
 // 2.
@@ -76,13 +76,14 @@ function simpleEvenAdding(num) {
 
      // loop over 1 to num
      for(var x=1; x<=num; x++) {
-         check if x is an even number
+         //check if x is an even number
          if (x % 2 === 0) {
              solution += x;
-         }
-     }
-     return solution;
-// }
+        }
+    }
+    return solution;
+}
+
 // answer option 2
 function simpleEvenAdding(num) {
     var solution = 0;
@@ -107,11 +108,12 @@ console.log(simpleEvenAdding(10));
 
 // use the space to fid the character of each word | after space, capitalize first charater 
 // .split separates the sting into an array; from what you enter in the ()
-// function letterCapitalize(str) {
-// // separate each word in the string
-// var words = str.split (" ");
-// //storage
-// var solution = "";
+
+function letterCapitalize(str) {
+// separate each word in the string
+var words = str.split (" ");
+//storage
+var solution = "";
 
 // find 1st character and then capitalize 
 for (var x=0; x<words.length;x++) {
@@ -150,6 +152,7 @@ console.log(simpleReverse("Good Day"));
 //	findDiff([1, 1, 1, 1, 1]) =======> 0 
 //  findDiff([1]) ======> 0;
 //  findDiff([]) =======> 0;
+
 function findDiff(arr) {
 // find max number
 var max = Math.max(...arr);
@@ -232,13 +235,14 @@ function isSelfDividing(num) {
     return true;
 }
 
-//console.log(selfDividingNumbers(1,22));
+console.log(selfDividingNumbers(1,22));
 
 
 
 
 //11. 
-// Write the function moveZeros(nums) taking an array of numbers and move all 0’s to the end of it while maintaining the relative order of the non-zero elements.  For example:
+// Write the function moveZeros(nums) taking an array of numbers and move all 0’s to the end of it 
+// while maintaining the relative order of the non-zero elements.  For example:
 // moveZeros([0,1,0,3,12]) ======> [1,3,12,0,0]
 // moveZeros([1,2,0,0,2,312,33,0,0]) ======> [1,2,2,312,33,0,0,0,0]
 // moveZeros([0,0,0]) ======> [0,0,0]
@@ -264,7 +268,7 @@ function moveZeros(nums) {
     return solution;
     }   
 
-    //console.log(moveZeros([1,0,21,4,0,0,3]));
+    console.log(moveZeros([1,0,21,4,0,0,3]));
 
 
 // 12.
