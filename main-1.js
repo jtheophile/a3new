@@ -9,12 +9,12 @@
 // step +1
 
     
-//     function printInt(n) {
-//         for(var x=1;x<=n;x++){
-//         console.log(x);
-//     }
-// }
-//printInt(22);                 Test function
+    function printInt(n) {
+        for(var x=1;x<=n;x++){
+        console.log(x);
+    }
+}
+printInt(22);                 Test function
 
 
 // 2.
@@ -24,13 +24,13 @@
 // reverse loop
 // -1
 
-// function printIntRev(n) {
-//     for(var x=n; x>=1; x--){
-//         console.log(x);
-//     }
-// }
+function printIntRev(n) {
+    for(var x=n; x>=1; x--){
+        console.log(x);
+    }
+}
 
-// printIntRev(22)
+printIntRev(22)
 
 
 // 3.
@@ -49,16 +49,16 @@
 //return 'boolean' if x is a boolean
 //otherwise return -1
 
-// function checkInput(x) {
-//  if (typeof x === "number" || typeof x === "string" || typeof x === "boolean") {
-//      return typeof x;
-//  } else {
-//      return -1;
+function checkInput(x) {
+ if (typeof x === "number" || typeof x === "string" || typeof x === "boolean") {
+     return typeof x;
+ } else {
+     return -1;
      
-//  }
-// }
+ }
+}
 
-//console.log("words");
+console.log("words");
 
 
 // 4.
@@ -70,30 +70,30 @@
 // simpleEvenAdding(1) ======> 0
 // simpleEvenAdding(0) =======> 0
 
-// function simpleEvenAdding(num) {
-//     // need variable tos tore the answer 
-//     var solution = 0;
+function simpleEvenAdding(num) {
+    // need variable tos tore the answer 
+    var solution = 0;
 
-//      // loop over 1 to num
-//      for(var x=1; x<=num; x++) {
-//          //check if x is an even number
-//          if (x % 2 === 0) {
-//              solution += x;
-//          }
-//      }
-//      return solution;
+     // loop over 1 to num
+     for(var x=1; x<=num; x++) {
+         check if x is an even number
+         if (x % 2 === 0) {
+             solution += x;
+         }
+     }
+     return solution;
 // }
 // answer option 2
-// function simpleEvenAdding(num) {
-//     var solution = 0;
+function simpleEvenAdding(num) {
+    var solution = 0;
 
-//     for (var x=0; x<=num;x+=2) {   // always adding even numbers | better, shorter
-//         solution += x;
-//     }
-//     return solution;
-// }
+    for (var x=0; x<=num;x+=2) {   // always adding even numbers | better, shorter
+        solution += x;
+    }
+    return solution;
+}
 
-// console.log(simpleEvenAdding(10));
+console.log(simpleEvenAdding(10));
 
 // 5.
 // Write the function letterCapitalize(str) taking a string and capitalize the
@@ -113,16 +113,16 @@
 // //storage
 // var solution = "";
 
-// // find 1st character and then capitalize 
-// for (var x=0; x<words.length;x++) {
-//     var upperWord = words[x].replace(words[x][0], words[x][0].toUpperCase());
-//     solution += " " + upperWord;  
-//     }
+// find 1st character and then capitalize 
+for (var x=0; x<words.length;x++) {
+    var upperWord = words[x].replace(words[x][0], words[x][0].toUpperCase());
+    solution += " " + upperWord;  
+    }
 
-//     return solution.slice(1);
-// }
+    return solution.slice(1);
+}
 
-//     console.log (letterCapitalize("is this working properly?"));
+    console.log (letterCapitalize("is this working properly?"));
 
 // 6.
 //Write the function simpleReverse(str) taking a string and return the string in reversed order. 
@@ -190,12 +190,11 @@ console.log(timeConvert(456));
 //	findStr(“o”, “daodo”) =======> 2
 //	findStr(“ha”,”abcde”)=======> 0
 //	findStr(“h”, “hihelloho”)======> 3
+
 function findStr(str, long) {
     var splitedArray = long.split(str);
     return splitedArray.length - 1;
 }
-
-
 
 
 //10. 
@@ -210,6 +209,7 @@ function findStr(str, long) {
 //	selfDividingNumbers(1, 22) ========> [1,2,3,4,5,6,7,8,9,11,12,15,22]
 //	selfDividingNumbers(1, 10) =======> [1,2,3,4,5,6,7,8,9]
 // selfDividingNumbers(12, 21) =======> [12, 15]
+
 function selfDividingNumbers(left, right) {
 // store
 var solution = [];
@@ -232,7 +232,7 @@ function isSelfDividing(num) {
     return true;
 }
 
-console.log(selfDividingNumbers("1,22"));
+//console.log(selfDividingNumbers(1,22));
 
 
 
@@ -244,7 +244,27 @@ console.log(selfDividingNumbers("1,22"));
 // moveZeros([0,0,0]) ======> [0,0,0]
 // moveZeros([1,2,312,11,2]) =======> [1,2,312,11,2]
 
+function moveZeros(nums) {
+    var counter = 0;
 
+    //store the solution array
+    var solution = [];
+
+    for(var x=0; x<nums.length;x++) {
+        if(nums[x] === 0) {
+            counter++;
+        } else {
+            solution.push(nums[x]);
+        }
+    }
+    // add zeros
+    for(var j=counter;j>0;j--){
+        solution.push(0);
+    }
+    return solution;
+    }   
+
+    //console.log(moveZeros([1,0,21,4,0,0,3]));
 
 
 // 12.
@@ -254,3 +274,18 @@ console.log(selfDividingNumbers("1,22"));
 //	average([2, 3, 3, 5, 7, 10]) ======> 5
 // average([7, 1432, 12, 13, 100]) ======> 312.8
 // average([]) ======> 0
+
+
+function average(nums) {
+    if(nums.length === 0) {
+        return 0;
+    }
+    //add all the numbers
+    var sum = 0;
+    for(var x=0;x<nums.length;i++) {
+        sum += nums[x];
+    }
+    // diivde by its length
+    return sum / nums.length
+}
+console.log(average([]));
